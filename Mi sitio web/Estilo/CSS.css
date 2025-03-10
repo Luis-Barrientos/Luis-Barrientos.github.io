@@ -1,0 +1,106 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0; /* Eliminar relleno por defecto */
+    background-color: #f4f4f4; /* Color de fondo suave */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #04003f; /* Color de fondo del encabezado */
+    color: white; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Estilos del menú de navegación */
+nav ul {
+    list-style-type: none; /* Eliminar viñetas */
+    display: flex; /* Usar flexbox para el menú */
+    justify-content: center; /* Centrar elementos */
+    padding: 0; /* Eliminar relleno */
+}
+
+nav ul li {
+    margin: 0 20px; /* Espaciado entre elementos */
+}
+
+nav a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold; /* Negrita para los enlaces */
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+nav a:hover {
+    color: #FFD700; /* Cambia de color al pasar el ratón */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 20px auto; /* Centrar el contenido */
+    background-color: white; /* Fondo blanco para el contenido */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para el contenido */
+}
+
+/* Estilos de las secciones */
+section {
+    margin-bottom: 20px; /* Espaciado entre secciones */
+}
+
+/* Estilos del formulario */
+form {
+    display: flex; /* Usar flexbox para el formulario */
+    flex-direction: column; /* Colocar elementos en columna */
+}
+
+label {
+    margin-bottom: 5px; /* Espaciado inferior para etiquetas */
+    font-weight: bold; /* Negrita para etiquetas */
+}
+
+input, textarea {
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+input:focus, textarea:focus {
+    border-color: #4CAF50; /* Cambia el color del borde al enfocar */
+    outline: none; /* Eliminar el contorno por defecto */
+}
+
+button {
+    padding: 10px; /* Espaciado interno */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+button:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos del pie de página */
+footer {
+    text-align: center; /* Centrar texto */
+    padding: 20px 0; /* Espaciado interno */
+    background-color: #4CAF50; /* Color de fondo del pie de página */
+    color: white; /* Color del texto */
+    position: relative; /* Posición relativa */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
+}
