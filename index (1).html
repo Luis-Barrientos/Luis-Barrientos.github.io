@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luis Barrientos Pérez · Desarrollador Full Stack Junior</title>
+<meta name="description" content="Portfolio de Luis Barrientos Pérez, desarrollador full stack junior (web y backend) en Antequera.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#F5F7F3;--ink:#16211B;--mut:#58665D;--sage:#3F6B55;--amb:#C97F12;--line:#D8E0DA;--chip:#E5ECE7;--card:#FFFFFF}
+[data-theme=dark]{--bg:#111814;--ink:#E9EFEA;--mut:#9AA89F;--sage:#8DB89E;--amb:#F0B558;--line:#26332B;--chip:#1D2922;--card:#17201B}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Bricolage Grotesque",system-ui,sans-serif}
+a{color:var(--sage);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--amb);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:56px}
+nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--sage)}nav .sp{flex:1}
+.ic{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 13px;font:600 .9rem inherit;font-family:inherit;cursor:pointer}
+.ic:hover{border-color:var(--amb)}
+.hero{padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+h1{font-size:clamp(3.2rem,9vw,6.6rem);line-height:.92;font-weight:800;letter-spacing:-.04em;margin:0 0 22px}
+h1 span{display:block}h1 span:nth-child(2){color:var(--sage)}
+.role{font-size:1.3rem;font-weight:600;margin:0 0 14px}
+.lead{max-width:46ch;color:var(--mut);margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--sage)}
+.btn.m{background:var(--sage);color:var(--bg)}.btn:hover{border-color:var(--amb)}
+.hero .wrap>*{animation:in .8s both}.hero .wrap>*:nth-child(2){animation-delay:.15s}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.dia svg{width:100%;height:auto;display:block}
+.dia .ln{stroke:var(--line);stroke-width:2}
+.dia .core{fill:var(--sage)}.dia .ct{fill:var(--bg);font:800 15px "Bricolage Grotesque",sans-serif;text-anchor:middle}
+.nd{cursor:pointer}.nd circle{fill:var(--card);stroke:var(--sage);stroke-width:2;transition:fill .2s}
+.nd text{fill:var(--ink);font:600 11.5px "Bricolage Grotesque",sans-serif;text-anchor:middle;pointer-events:none}
+.nd:hover circle,.nd.on circle{fill:var(--amb);stroke:var(--amb)}.nd:hover text,.nd.on text{fill:#16211B}
+.nd:focus{outline:none}.nd:focus-visible circle{stroke:var(--amb);stroke-width:4}
+#info{min-height:3.4em;margin:6px 0 0;text-align:center;color:var(--mut);font-size:.98rem}#info b{color:var(--ink)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin:0 0 28px}
+.filters{display:flex;gap:8px;margin:-8px 0 24px;flex-wrap:wrap}
+.fl{background:var(--chip);border:2px solid transparent;color:var(--ink);border-radius:999px;padding:5px 16px;font:600 .92rem "Bricolage Grotesque",sans-serif;cursor:pointer}
+.fl[aria-pressed=true]{border-color:var(--sage)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--amb);transform:translateY(-3px)}.card[hidden]{display:none}
+.card h3{margin:0 0 8px;font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.card p{margin:0 0 12px;color:var(--mut);flex:1}
+.st{font:600 .78rem "Bricolage Grotesque",sans-serif;color:var(--amb);border:1px solid var(--amb);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0 0 14px}
+.tags li{background:var(--chip);border-radius:6px;padding:2px 10px;font-size:.86rem}
+.row{display:grid;grid-template-columns:230px 1fr;gap:10px 32px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}.row h3{margin:0;font-size:1.12rem}.row p,.row ul{margin:0}.row ul.l{padding-left:20px}
+.meta{color:var(--mut);font-size:.95rem}
+.big{display:inline-block;font-size:clamp(1.6rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.03em;color:var(--ink);text-decoration-color:var(--amb);text-decoration-thickness:4px;word-break:break-all}
+.big:hover{color:var(--sage)}
+footer{padding:28px 0 48px;color:var(--mut);border-top:1px solid var(--line);font-size:.95rem}
+#top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;background:var(--sage);color:var(--bg);border:0;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+#top.v{opacity:1;pointer-events:auto}
+@media(max-width:780px){.hero .wrap,.grid,.row{grid-template-columns:1fr}.row{gap:6px}nav .h{display:none}body{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#inicio"><b>LB</b></a><span class="sp"></span>
+  <a class="h" href="#proyectos">Proyectos</a><a class="h" href="#experiencia">Experiencia</a><a class="h" href="#habilidades">Habilidades</a><a class="h" href="#contacto">Contacto</a>
+  <button class="ic" id="tg" aria-label="Cambiar entre tema claro y oscuro">Tema</button>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="wrap">
+  <div>
+    <h1><span>Luis</span><span>Barrientos</span><span>Pérez</span></h1>
+    <p class="role">Desarrollador Full Stack Junior · Web y Backend</p>
+    <p class="lead">Me formo en DAW y DAM y hice prácticas en el departamento de tecnología de una editorial, con arquitectura hexagonal y RabbitMQ. Creo proyectos propios de principio a fin y busco mi primera oportunidad profesional.</p>
+    <div class="btns">
+      <a class="btn m" href="mailto:luink0900@gmail.com">Escríbeme</a>
+      <a class="btn" href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="CV_Luis_Barrientos_Perez.pdf" target="_blank" rel="noopener">Descargar CV</a>
+    </div>
+  </div>
+  <div class="dia">
+    <svg viewBox="0 0 400 400" role="group" aria-label="Diagrama de arquitectura hexagonal con seis adaptadores"><g id="g"></g>
+      <polygon class="core" points="200,122 267.5,161 267.5,239 200,278 132.5,239 132.5,161"/>
+      <text class="ct" x="200" y="196">Lógica</text><text class="ct" x="200" y="214">de negocio</text></svg>
+    <p id="info" aria-live="polite">Esta es la arquitectura que usé en mis prácticas: el dominio en el centro y todo lo demás conectado por puertos. <b>Pulsa un adaptador.</b></p>
+  </div>
+</div></header>
+
+<main>
+<section id="proyectos"><div class="wrap">
+  <h2>Proyectos</h2>
+  <div class="filters" role="group" aria-label="Filtrar proyectos">
+    <button class="fl" data-f="all" aria-pressed="true">Todos</button>
+    <button class="fl" data-f="laravel" aria-pressed="false">Laravel</button>
+    <button class="fl" data-f="js" aria-pressed="false">JavaScript</button>
+  </div>
+  <div class="grid">
+    <article class="card" data-t="laravel"><h3>Rekom</h3>
+      <p>Plataforma de recomendación de videojuegos basada exclusivamente en la opinión de la comunidad.</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li><li>API externa</li></ul>
+      <a href="https://github.com/Luis-Barrientos/re-kom.eu" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+    <article class="card" data-t="laravel"><h3>LecturaXP<span class="st">En desarrollo</span></h3>
+      <p>Web de seguimiento de lecturas y sesiones, con logros y sistema de experiencia (gamificación).</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li><li>API de libros</li></ul>
+      <a href="https://github.com/Luis-Barrientos/lecturaxp" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+    <article class="card" data-t="laravel"><h3>Casino educativo<span class="st">En desarrollo</span></h3>
+      <p>Aplicación para aprender las reglas de juegos de casino sin dinero real, con backend y frontend independientes.</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li></ul>
+      <!-- Añadir enlace cuando el repositorio sea público:
+      <a href="https://github.com/Luis-Barrientos/NOMBRE-DEL-REPO" target="_blank" rel="noopener">Ver código en GitHub</a> -->
+    </article>
+    <article class="card" data-t="js"><h3>Dungeon game</h3>
+      <p>Juego de descenso por una mazmorra con combate, habilidades mágicas, pisos temáticos y jefe final.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <a href="https://github.com/Luis-Barrientos/Dungeon-Depths" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+  </div>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+  <h2>Experiencia</h2>
+  <div class="row">
+    <div><h3>Prácticas en el Departamento de Tecnología</h3><span class="meta">Mar 2026 – Jun 2026</span></div>
+    <div><p class="meta">Innovación y Cualificación Editorial · Antequera</p>
+      <ul class="l"><li>Desarrollo de aplicaciones con arquitectura hexagonal, separando la lógica de negocio de la infraestructura.</li>
+      <li>Integración de servicios mediante mensajería asíncrona con RabbitMQ.</li>
+      <li>Participación en proyectos internos con Python y TypeScript, trabajando en equipo.</li></ul></div>
+  </div>
+  <h2 style="margin-top:48px">Formación</h2>
+  <div class="row"><h3>CFGS Desarrollo de Aplicaciones Multiplataforma</h3><p class="meta">DigiTech Málaga · 2026 – 2027 (en curso)</p></div>
+  <div class="row"><h3>CFGS Desarrollo de Aplicaciones Web</h3><p class="meta">ITEC Antequera · 2025 – 2026</p></div>
+  <div class="row"><h3>Bachillerato de Humanidades y Ciencias Sociales</h3><p class="meta">IES Pedro Espinosa · 2025</p></div>
+</div></section>
+
+<section id="habilidades"><div class="wrap">
+  <h2>Habilidades</h2>
+  <div class="row"><h3>Frontend</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>TailwindCSS</li><li>JavaScript</li><li>TypeScript</li></ul></div>
+  <div class="row"><h3>Backend</h3><ul class="tags"><li>Laravel</li><li>PHP</li><li>Node.js</li><li>Java</li><li>Python</li></ul></div>
+  <div class="row"><h3>Arquitectura y mensajería</h3><ul class="tags"><li>Arquitectura hexagonal</li><li>RabbitMQ</li></ul></div>
+  <div class="row"><h3>APIs y versiones</h3><ul class="tags"><li>APIs REST</li><li>Git</li><li>GitHub</li></ul></div>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <h2>Hablemos</h2>
+  <p class="meta" style="margin:0 0 14px">Busco mi primera oportunidad en desarrollo web y backend. Presencial, remoto o híbrido.</p>
+  <a class="big" href="mailto:luink0900@gmail.com">luink0900@gmail.com</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">Luis Barrientos Pérez · Antequera · <a href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener">GitHub</a></div></footer>
+<button id="top" aria-label="Volver arriba">↑</button>
+
+<script>
+var N=[["Laravel","Backend de Rekom, LecturaXP y Casino educativo."],
+["API REST","Consumo de APIs externas en Rekom y LecturaXP."],
+["RabbitMQ","Mensajería asíncrona para integrar servicios en mis prácticas."],
+["TypeScript","Proyectos internos de las prácticas, trabajando en equipo."],
+["Python","Lo uso junto a TypeScript en los proyectos internos de las prácticas."],
+["JavaScript","Dungeon game: un juego completo con HTML, CSS y JavaScript."]];
+var P=[[200,52],[330,126],[330,274],[200,348],[70,274],[70,126]],g=document.getElementById("g"),info=document.getElementById("info"),NS="http://www.w3.org/2000/svg",h="";
+P.forEach(function(p){h+='<line class="ln" x1="200" y1="200" x2="'+p[0]+'" y2="'+p[1]+'"/>'});
+N.forEach(function(n,i){h+='<g class="nd" tabindex="0" role="button" aria-label="'+n[0]+'" data-i="'+i+'"><circle cx="'+P[i][0]+'" cy="'+P[i][1]+'" r="36"/><text x="'+P[i][0]+'" y="'+(P[i][1]+4)+'">'+n[0]+'</text></g>'});
+g.innerHTML=h;
+function sel(e){var i=+e.getAttribute("data-i");document.querySelectorAll(".nd").forEach(function(x){x.classList.toggle("on",x===e)});info.innerHTML="<b>"+N[i][0]+".</b> "+N[i][1]}
+document.querySelectorAll(".nd").forEach(function(e){e.addEventListener("click",function(){sel(e)});e.addEventListener("keydown",function(k){if(k.key==="Enter"||k.key===" "){k.preventDefault();sel(e)}})});
+document.querySelectorAll(".fl").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".fl").forEach(function(x){x.setAttribute("aria-pressed",x===b)});var f=b.dataset.f;document.querySelectorAll(".card").forEach(function(c){c.hidden=f!=="all"&&c.dataset.t.indexOf(f)<0})})});
+document.getElementById("tg").addEventListener("click",function(){var t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;try{localStorage.setItem("theme",t)}catch(e){}});
+var tp=document.getElementById("top");addEventListener("scroll",function(){tp.classList.toggle("v",scrollY>600)});tp.addEventListener("click",function(){scrollTo({top:0})});
+</script>
+</body>
+</html>
