@@ -5,136 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luis Barrientos Pérez · Desarrollador Full Stack Junior</title>
 <meta name="description" content="Portfolio de Luis Barrientos Pérez, desarrollador full stack junior (web y backend) en Antequera.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#F6F8F5;--ink:#1F2923;--muted:#5B6860;--sage:#4E6A5A;--soft:#C9D6CD;--line:#D9E1DB;--chip:#E6EDE8}
-@media(prefers-color-scheme:dark){:root{--bg:#141A16;--ink:#E8EEE9;--muted:#98A69D;--sage:#9DB9A8;--soft:#2F4237;--line:#26332B;--chip:#1E2922}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Bricolage Grotesque",system-ui,sans-serif}
-a{color:var(--sage);text-underline-offset:3px}
-a:focus-visible{outline:3px solid var(--sage);outline-offset:3px;border-radius:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
-header.hero{padding:72px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center}
-h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;font-weight:800;margin:0 0 16px;letter-spacing:-.025em}
-.role{font-size:1.25rem;font-weight:600;color:var(--sage);margin:0 0 20px}
-.lead{max-width:52ch;color:var(--muted);margin:0 0 28px}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--sage)}
-.btn.main{background:var(--sage);color:var(--bg)}
-.btn:hover{background:var(--chip);color:var(--ink)}
-.btn.main:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.hex{width:260px;aspect-ratio:1/1.1;background:var(--sage);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);padding:6px}
-.hex img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:block}
-section{padding:44px 0;border-top:1px solid var(--line)}
-h2{font-size:1.9rem;font-weight:800;letter-spacing:-.015em;margin:0 0 24px}
-.row{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:18px 0;border-bottom:1px solid var(--line)}
-.row:last-child{border-bottom:0}
-.row h3{margin:0;font-size:1.15rem;font-weight:600}
-.row p{margin:0 0 8px}
-.meta{color:var(--muted);font-size:.95rem}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:8px 0}
-.tags li{background:var(--chip);border-radius:6px;padding:2px 10px;font-size:.88rem}
-.status{font-size:.82rem;font-weight:600;color:var(--sage);border:1px solid var(--soft);border-radius:999px;padding:1px 9px;margin-left:6px;white-space:nowrap}
-ul.plain{margin:6px 0 0;padding-left:20px}
-footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted)}
-@media(max-width:720px){.hero .wrap{grid-template-columns:1fr}.hex{order:-1;width:200px}.row{grid-template-columns:1fr;gap:6px}body{font-size:16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="hero">
+<div id="bar"></div><div id="cur" aria-hidden="true"></div>
+<nav><div class="wrap">
+  <a href="#inicio"><b>LB</b></a><span class="sp"></span>
+  <a class="h" href="#trabajo">Cómo trabajo</a><a class="h" href="#proyectos">Proyectos</a><a class="h" href="#experiencia">Experiencia</a><a class="h" href="#contacto">Contacto</a>
+  <button class="ic" id="tg" aria-label="Cambiar entre tema claro y oscuro">Tema</button>
+</div></nav>
+
+<header class="hero" id="inicio">
+  <canvas id="bg" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <h1>Luis Barrientos Pérez</h1>
-      <p class="role">Desarrollador Full Stack Junior · Web y Backend</p>
-      <p class="lead">Me formo en DAW y DAM y hice prácticas en el departamento de tecnología de una editorial. Me gusta crear proyectos propios de principio a fin y busco mi primera oportunidad profesional para seguir creciendo en desarrollo web y backend.</p>
+      <h1><span class="scr">Luis</span><span class="scr">Barrientos</span><span class="scr">Pérez</span></h1>
+      <p class="role scr">Desarrollador Full Stack Junior · Web y Backend</p>
+      <p class="lead">Me formo en DAW y DAM y hice prácticas en el departamento de tecnología de una editorial, con arquitectura hexagonal y RabbitMQ. Creo proyectos propios de principio a fin y busco mi primera oportunidad profesional.</p>
       <div class="btns">
-        <a class="btn main" href="mailto:luink0900@gmail.com">Escríbeme</a>
-        <a class="btn" href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="CV_Luis_Barrientos_Perez.pdf" target="_blank" rel="noopener">Descargar CV</a>
+        <a class="btn m mag" href="mailto:luink0900@gmail.com">Escríbeme</a>
+        <a class="btn mag" href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn mag" href="CV_Luis_Barrientos_Perez.pdf" target="_blank" rel="noopener">Descargar CV</a>
       </div>
     </div>
     <div class="hex"><img src="foto.png" alt="Retrato de Luis Barrientos Pérez"></div>
   </div>
 </header>
 
-<main class="wrap">
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="row">
-      <h3>Rekom</h3>
-      <div>
-        <p>Plataforma de recomendación de videojuegos basada exclusivamente en la opinión de la comunidad.</p>
-        <ul class="tags"><li>Laravel</li><li>PHP</li><li>API externa</li></ul>
-        <a href="https://github.com/Luis-Barrientos/re-kom.eu" target="_blank" rel="noopener">Ver código en GitHub</a>
-      </div>
-    </div>
-    <div class="row">
-      <h3>LecturaXP <span class="status">En desarrollo</span></h3>
-      <div>
-        <p>Web de seguimiento de lecturas y sesiones, con logros y sistema de experiencia (gamificación).</p>
-        <ul class="tags"><li>Laravel</li><li>PHP</li><li>API de libros</li></ul>
-        <a href="https://github.com/Luis-Barrientos/lecturaxp" target="_blank" rel="noopener">Ver código en GitHub</a>
-      </div>
-    </div>
-    <div class="row">
-      <h3>Casino educativo <span class="status">En desarrollo</span></h3>
-      <div>
-        <p>Aplicación para aprender las reglas de juegos de casino sin dinero real, con backend y frontend independientes.</p>
-        <ul class="tags"><li>Laravel</li><li>PHP</li></ul>
-        <!-- Añadir aquí el enlace al repositorio cuando sea público:
-        <a href="https://github.com/Luis-Barrientos/NOMBRE-DEL-REPO" target="_blank" rel="noopener">Ver código en GitHub</a> -->
-      </div>
-    </div>
-    <div class="row">
-      <h3>Dungeon game</h3>
-      <div>
-        <p>Juego de descenso por una mazmorra con combate, habilidades mágicas, pisos temáticos y jefe final.</p>
-        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-        <a href="https://github.com/Luis-Barrientos/Dungeon-Depths" target="_blank" rel="noopener">Ver código en GitHub</a>
-      </div>
-    </div>
-  </section>
+<div class="marq" aria-hidden="true"><div id="mq">Laravel · PHP · JavaScript · TypeScript · Python · Java · Node.js · RabbitMQ · Arquitectura hexagonal · APIs REST · Git · TailwindCSS · </div></div>
 
-  <section id="experiencia">
-    <h2>Experiencia</h2>
-    <div class="row">
-      <div><h3>Prácticas en el Departamento de Tecnología</h3><span class="meta">Mar 2026 – Jun 2026</span></div>
-      <div>
-        <p class="meta">Innovación y Cualificación Editorial · Antequera</p>
-        <ul class="plain">
-          <li>Desarrollo de aplicaciones con arquitectura hexagonal, separando la lógica de negocio de la infraestructura.</li>
-          <li>Integración de servicios mediante mensajería asíncrona con RabbitMQ.</li>
-          <li>Participación en proyectos internos con Python y TypeScript, trabajando en equipo.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<main>
+<section id="trabajo"><div class="wrap">
+  <h2>Cómo trabajo</h2>
+  <p class="meta intro">En mis prácticas construí aplicaciones con arquitectura hexagonal: la lógica de negocio en el centro y todo lo demás conectado por puertos. Pulsa un adaptador para ver dónde lo he usado.</p>
+  <div class="dia">
+    <svg viewBox="0 0 400 400" role="group" aria-label="Diagrama de arquitectura hexagonal con seis adaptadores"><g id="g"></g>
+      <polygon class="core" points="200,122 267.5,161 267.5,239 200,278 132.5,239 132.5,161"/>
+      <text class="ct" x="200" y="196">Lógica</text><text class="ct" x="200" y="214">de negocio</text></svg>
+    <p id="info" aria-live="polite"><b>Elige un adaptador.</b></p>
+  </div>
+</div></section>
 
-  <section id="habilidades">
-    <h2>Habilidades</h2>
-    <div class="row"><h3>Frontend</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>TailwindCSS</li><li>JavaScript</li><li>TypeScript</li></ul></div>
-    <div class="row"><h3>Backend</h3><ul class="tags"><li>Laravel</li><li>PHP</li><li>Node.js</li><li>Java</li><li>Python</li></ul></div>
-    <div class="row"><h3>Arquitectura y mensajería</h3><ul class="tags"><li>Arquitectura hexagonal</li><li>RabbitMQ</li></ul></div>
-    <div class="row"><h3>APIs y versiones</h3><ul class="tags"><li>APIs REST</li><li>Git</li><li>GitHub</li></ul></div>
-  </section>
+<section id="proyectos"><div class="wrap">
+  <h2>Proyectos</h2>
+  <div class="filters" role="group" aria-label="Filtrar proyectos">
+    <button class="fl" data-f="all" aria-pressed="true">Todos</button>
+    <button class="fl" data-f="laravel" aria-pressed="false">Laravel</button>
+    <button class="fl" data-f="js" aria-pressed="false">JavaScript</button>
+  </div>
+  <div class="grid">
+    <article class="card" data-t="laravel"><h3>Rekom</h3>
+      <p>Plataforma de recomendación de videojuegos basada exclusivamente en la opinión de la comunidad.</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li><li>API externa</li></ul>
+      <a href="https://github.com/Luis-Barrientos/re-kom.eu" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+    <article class="card" data-t="laravel"><h3>LecturaXP<span class="st">En desarrollo</span></h3>
+      <p>Web de seguimiento de lecturas y sesiones, con logros y sistema de experiencia (gamificación).</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li><li>API de libros</li></ul>
+      <a href="https://github.com/Luis-Barrientos/lecturaxp" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+    <article class="card" data-t="laravel"><h3>Casino educativo<span class="st">En desarrollo</span></h3>
+      <p>Aplicación para aprender las reglas de juegos de casino sin dinero real, con backend y frontend independientes.</p>
+      <ul class="tags"><li>Laravel</li><li>PHP</li></ul>
+      <!-- Añadir enlace cuando el repositorio sea público:
+      <a href="https://github.com/Luis-Barrientos/NOMBRE-DEL-REPO" target="_blank" rel="noopener">Ver código en GitHub</a> -->
+    </article>
+    <article class="card" data-t="js"><h3>Dungeon game</h3>
+      <p>Juego de descenso por una mazmorra con combate, habilidades mágicas, pisos temáticos y jefe final.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <a href="https://github.com/Luis-Barrientos/Dungeon-Depths" target="_blank" rel="noopener">Ver código en GitHub</a></article>
+  </div>
+</div></section>
 
-  <section id="formacion">
-    <h2>Formación</h2>
-    <div class="row"><div><h3>CFGS Desarrollo de Aplicaciones Multiplataforma</h3></div><p class="meta">DigiTech Málaga · 2026 – 2027 (en curso)</p></div>
-    <div class="row"><div><h3>CFGS Desarrollo de Aplicaciones Web</h3></div><p class="meta">ITEC Antequera · 2025 – 2026</p></div>
-    <div class="row"><div><h3>Bachillerato de Humanidades y Ciencias Sociales</h3></div><p class="meta">IES Pedro Espinosa · 2025</p></div>
-  </section>
+<section id="experiencia"><div class="wrap">
+  <h2>Experiencia y formación</h2>
+  <ol class="tl">
+    <li><span class="meta">Mar 2026 – Jun 2026</span><h3>Prácticas en el Departamento de Tecnología</h3>
+      <p class="meta">Innovación y Cualificación Editorial · Antequera</p>
+      <ul><li>Aplicaciones con arquitectura hexagonal, separando la lógica de negocio de la infraestructura.</li><li>Integración de servicios mediante mensajería asíncrona con RabbitMQ.</li><li>Proyectos internos con Python y TypeScript, trabajando en equipo.</li></ul></li>
+    <li><span class="meta">2026 – 2027 · en curso</span><h3>CFGS Desarrollo de Aplicaciones Multiplataforma</h3><p class="meta">DigiTech Málaga</p></li>
+    <li><span class="meta">2025 – 2026</span><h3>CFGS Desarrollo de Aplicaciones Web</h3><p class="meta">ITEC Antequera</p></li>
+    <li><span class="meta">2025</span><h3>Bachillerato de Humanidades y Ciencias Sociales</h3><p class="meta">IES Pedro Espinosa</p></li>
+  </ol>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <h2>Hablemos</h2>
+  <p class="meta intro">Busco mi primera oportunidad en desarrollo web y backend. Presencial, remoto o híbrido.</p>
+  <a class="big" href="mailto:luink0900@gmail.com">luink0900@gmail.com</a>
+</div></section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>Antequera · Disponible en modalidad presencial, remoto o híbrido · <a href="mailto:luink0900@gmail.com">luink0900@gmail.com</a></p>
-  </div>
-</footer>
+<footer><div class="wrap">Luis Barrientos Pérez · Antequera · <a href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener">GitHub</a></div></footer>
+<button id="top" aria-label="Volver arriba">↑</button>
+<script src="js/main.js"></script>
 </body>
 </html>
