@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Barrientos Pérez · Desarrollador Full Stack Junior</title>
+  <meta name="description" content="Portfolio de Luis Barrientos Pérez, desarrollador full stack junior especializado en web y backend, arquitectura hexagonal y mensajería con RabbitMQ.">
+  
+  <!-- Tipografía Bricolage Grotesque (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon SVG con motivo hexagonal -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5' fill='%23112119' stroke='%237FC3A0' stroke-width='8'/><text x='50' y='60' font-family='sans-serif' font-weight='900' font-size='38' fill='%23F2B65A' text-anchor='middle'>L</text></svg>">
+</head>
+<body>
+  <!-- Salto accesible al contenido -->
+  <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Barra superior de progreso de lectura -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Cursor interactivo para puntero fino -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+
+  <!-- Navegación fija (Sticky Header) -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#inicio" class="brand" aria-label="Luis Barrientos Pérez - Inicio">
+        <span class="brand-hex" aria-hidden="true">
+          <svg viewBox="0 0 32 36" width="20" height="22" fill="none">
+            <polygon points="16,2 30,9.5 30,26.5 16,34 2,26.5 2,9.5" stroke="currentColor" stroke-width="2.2" />
+          </svg>
+        </span>
+        <span class="brand-text">Luis Barrientos</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#como-trabajo" class="nav-link">Cómo trabajo</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Botón para alternar tema claro / oscuro -->
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar a tema claro" aria-pressed="false">
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ═══════════════════════════════════════
+         1. PORTADA (HERO)
+    ═══════════════════════════════════════ -->
+    <section id="inicio" class="hero" aria-label="Portada y presentación">
+      <!-- Malla hexagonal interactiva en Canvas -->
+      <canvas id="hex-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-content">
+        <!-- Badges de contexto rápido para reclutador (30 segundos) -->
+        <div class="hero-badges">
+          <span class="badge badge-status">
+            <span class="status-pulse" aria-hidden="true"></span>
+            Buscando primera oportunidad profesional
+          </span>
+          <span class="badge">Antequera (Málaga)</span>
+          <span class="badge">Presencial · Remoto · Híbrido</span>
+          <span class="badge">Carné B y vehículo propio</span>
+        </div>
+
+        <!-- Nombre de impacto con efecto de texto descifrado -->
+        <h1 class="hero-title" aria-label="Luis Barrientos Pérez">
+          <span class="scramble-line" data-scramble="LUIS">LUIS</span>
+          <span class="scramble-line text-accent" data-scramble="BARRIENTOS">BARRIENTOS</span>
+          <span class="scramble-line" data-scramble="PÉREZ">PÉREZ</span>
+        </h1>
+
+        <!-- Subtítulo profesional descifrado -->
+        <p class="hero-role scramble-line" data-scramble="Desarrollador Full Stack Junior · Web y Backend" aria-label="Desarrollador Full Stack Junior · Web y Backend">
+          Desarrollador Full Stack Junior · Web y Backend
+        </p>
+
+        <!-- Bloque con retrato en hexágono e introducción literal -->
+        <div class="hero-bio-card">
+          <div class="photo-hex-frame" aria-hidden="true">
+            <div class="photo-hex-inner">
+              <img src="foto.png" alt="Retrato de Luis Barrientos Pérez" class="photo-hex-img" width="164" height="184" loading="eager">
+            </div>
+          </div>
+          <div class="hero-bio-text">
+            <p class="hero-intro">
+              Desarrollador full stack junior con formación en DAW y DAM y prácticas en el departamento de tecnología de una editorial, donde trabajé con arquitectura hexagonal y mensajería con RabbitMQ. Aprendo rápido, me adapto bien al trabajo en equipo y al autónomo, y me gusta crear proyectos propios de principio a fin. Busco mi primera oportunidad profesional para seguir creciendo en desarrollo web y backend.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tres botones magnéticos del hero -->
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary magnetic-btn">Ver proyectos</a>
+          <a href="#contacto" class="btn btn-secondary magnetic-btn">Hablemos</a>
+          <a href="CV_Luis_Barrientos_Perez.pdf" download="CV_Luis_Barrientos_Perez.pdf" class="btn btn-outline magnetic-btn">Descargar CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         2. CINTA DE TECNOLOGÍAS (MARQUEE)
+    ═══════════════════════════════════════ -->
+    <section class="tech-marquee" aria-label="Resumen dinámico de tecnologías">
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-content">
+          <span>HTML</span><span class="separator">◆</span>
+          <span>CSS</span><span class="separator">◆</span>
+          <span>TailwindCSS</span><span class="separator">◆</span>
+          <span>JavaScript</span><span class="separator">◆</span>
+          <span>TypeScript</span><span class="separator">◆</span>
+          <span>PHP</span><span class="separator">◆</span>
+          <span>Laravel</span><span class="separator">◆</span>
+          <span>Node.js</span><span class="separator">◆</span>
+          <span>Java</span><span class="separator">◆</span>
+          <span>Python</span><span class="separator">◆</span>
+          <span>RabbitMQ</span><span class="separator">◆</span>
+          <span>Arquitectura hexagonal</span><span class="separator">◆</span>
+          <span>APIs REST</span><span class="separator">◆</span>
+          <span>Git</span><span class="separator">◆</span>
+          <span>GitHub</span><span class="separator">◆</span>
+        </div>
+        <!-- Duplicado idéntico para flujo continuo infinito -->
+        <div class="marquee-content">
+          <span>HTML</span><span class="separator">◆</span>
+          <span>CSS</span><span class="separator">◆</span>
+          <span>TailwindCSS</span><span class="separator">◆</span>
+          <span>JavaScript</span><span class="separator">◆</span>
+          <span>TypeScript</span><span class="separator">◆</span>
+          <span>PHP</span><span class="separator">◆</span>
+          <span>Laravel</span><span class="separator">◆</span>
+          <span>Node.js</span><span class="separator">◆</span>
+          <span>Java</span><span class="separator">◆</span>
+          <span>Python</span><span class="separator">◆</span>
+          <span>RabbitMQ</span><span class="separator">◆</span>
+          <span>Arquitectura hexagonal</span><span class="separator">◆</span>
+          <span>APIs REST</span><span class="separator">◆</span>
+          <span>Git</span><span class="separator">◆</span>
+          <span>GitHub</span><span class="separator">◆</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         3. CÓMO TRABAJO (DIAGRAMA HEXAGONAL)
+    ═══════════════════════════════════════ -->
+    <section id="como-trabajo" class="section work-method" aria-labelledby="heading-metodo">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="heading-metodo" class="section-title">Cómo trabajo</h2>
+          <p class="section-lead">
+            En mis prácticas construí aplicaciones con arquitectura hexagonal: la lógica de negocio en el centro y todo lo demás conectado por puertos. Pulsa un adaptador para ver dónde lo he usado.
+          </p>
+        </div>
+
+        <div class="diagram-layout">
+          <!-- Diagrama SVG accesible e interactivo (viewBox 400x400) -->
+          <div class="diagram-graphic" role="region" aria-label="Diagrama interactivo de arquitectura hexagonal">
+            <svg class="hex-diagram-svg" viewBox="0 0 400 400" width="100%" height="auto" role="img" aria-label="Diagrama de arquitectura hexagonal con adaptadores perimetrales">
+              <!-- Líneas conectoras desde el núcleo hacia los 6 adaptadores -->
+              <g class="diagram-lines" aria-hidden="true">
+                <!-- Laravel (arriba) -->
+                <line id="line-laravel" class="connector-line active" x1="200" y1="146" x2="200" y2="70" />
+                <!-- API REST (arriba derecha) -->
+                <line id="line-api-rest" class="connector-line" x1="247" y1="173" x2="318" y2="132" />
+                <!-- RabbitMQ (abajo derecha) -->
+                <line id="line-rabbitmq" class="connector-line" x1="247" y1="227" x2="318" y2="268" />
+                <!-- TypeScript (abajo) -->
+                <line id="line-typescript" class="connector-line" x1="200" y1="254" x2="200" y2="330" />
+                <!-- Python (abajo izquierda) -->
+                <line id="line-python" class="connector-line" x1="153" y1="227" x2="82" y2="268" />
+                <!-- JavaScript (arriba izquierda) -->
+                <line id="line-javascript" class="connector-line" x1="153" y1="173" x2="82" y2="132" />
+              </g>
+
+              <!-- Núcleo central: Lógica de negocio (animación de pulso suave) -->
+              <g class="hex-core-group" aria-hidden="true">
+                <polygon class="hex-core-shape" points="247,173 247,227 200,254 153,227 153,173 200,146" />
+                <text x="200" y="196" class="hex-core-text" text-anchor="middle">Lógica de</text>
+                <text x="200" y="213" class="hex-core-text" text-anchor="middle">negocio</text>
+              </g>
+
+              <!-- 6 Nodos interactivos periféricos (controlables por teclado y ratón) -->
+              <g class="diagram-nodes">
+                <!-- 1. Laravel -->
+                <g class="hex-node active" role="button" tabindex="0" data-node="laravel" aria-pressed="true" aria-label="Adaptador Laravel">
+                  <circle cx="200" cy="70" r="26" class="node-bg" />
+                  <text x="200" y="74" class="node-text" text-anchor="middle">Laravel</text>
+                </g>
+
+                <!-- 2. API REST -->
+                <g class="hex-node" role="button" tabindex="0" data-node="api-rest" aria-pressed="false" aria-label="Adaptador API REST">
+                  <circle cx="318" cy="132" r="26" class="node-bg" />
+                  <text x="318" y="136" class="node-text" text-anchor="middle">API REST</text>
+                </g>
+
+                <!-- 3. RabbitMQ -->
+                <g class="hex-node" role="button" tabindex="0" data-node="rabbitmq" aria-pressed="false" aria-label="Adaptador RabbitMQ">
+                  <circle cx="318" cy="268" r="26" class="node-bg" />
+                  <text x="318" y="272" class="node-text" text-anchor="middle">RabbitMQ</text>
+                </g>
+
+                <!-- 4. TypeScript -->
+                <g class="hex-node" role="button" tabindex="0" data-node="typescript" aria-pressed="false" aria-label="Adaptador TypeScript">
+                  <circle cx="200" cy="330" r="26" class="node-bg" />
+                  <text x="200" y="334" class="node-text" text-anchor="middle">TypeScript</text>
+                </g>
+
+                <!-- 5. Python -->
+                <g class="hex-node" role="button" tabindex="0" data-node="python" aria-pressed="false" aria-label="Adaptador Python">
+                  <circle cx="82" cy="268" r="26" class="node-bg" />
+                  <text x="82" y="272" class="node-text" text-anchor="middle">Python</text>
+                </g>
+
+                <!-- 6. JavaScript -->
+                <g class="hex-node" role="button" tabindex="0" data-node="javascript" aria-pressed="false" aria-label="Adaptador JavaScript">
+                  <circle cx="82" cy="132" r="26" class="node-bg" />
+                  <text x="82" y="136" class="node-text" text-anchor="middle">JavaScript</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Panel de detalle con feedback aria-live -->
+          <div class="diagram-info-card">
+            <div class="info-header">
+              <span class="info-tag">Adaptador seleccionado</span>
+              <h3 id="diagram-active-title" class="info-title">Laravel</h3>
+            </div>
+            <div id="hex-detail" class="info-body" aria-live="polite">
+              Backend de Rekom, LecturaXP y Casino educativo.
+            </div>
+            <div class="info-instruction">
+              <span class="instruction-dot" aria-hidden="true"></span>
+              Navega haciendo clic o usando Tab y Enter / Espacio.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         4. HABILIDADES TÉCNICAS (SECCIÓN PRINCIPAL)
+    ═══════════════════════════════════════ -->
+    <section id="habilidades" class="section skills-section" aria-labelledby="heading-habilidades">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="heading-habilidades" class="section-title">Habilidades técnicas</h2>
+          <p class="section-lead">
+            Tecnologías y competencias con evidencias reales de aplicación práctica, proyectos personales publicados y entorno editorial.
+          </p>
+        </div>
+
+        <!-- Resumen de todas las tecnologías (Chips interactivos) -->
+        <div class="skills-summary-wrapper" aria-label="Resumen de tecnologías">
+          <div class="skills-chips-grid">
+            <span class="tech-chip">HTML</span>
+            <span class="tech-chip">CSS</span>
+            <span class="tech-chip">TailwindCSS</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip tech-chip-highlight">Laravel</span>
+            <span class="tech-chip">Node.js</span>
+            <span class="tech-chip">Java</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip tech-chip-highlight">RabbitMQ</span>
+            <span class="tech-chip tech-chip-highlight">Arquitectura hexagonal</span>
+            <span class="tech-chip">APIs REST</span>
+            <span class="tech-chip">Git</span>
+            <span class="tech-chip">GitHub</span>
+          </div>
+        </div>
+
+        <!-- Categorías con evidencias específicas -->
+        <div class="skills-categories-grid">
+          <!-- 1. Frontend -->
+          <article class="skill-category-card">
+            <div class="category-header">
+              <span class="category-indicator" aria-hidden="true"></span>
+              <h3 class="category-title">Frontend</h3>
+            </div>
+            <ul class="evidence-list">
+              <li>Maquetación y estilos con HTML, CSS y TailwindCSS.</li>
+              <li>Lógica en el cliente con JavaScript y TypeScript.</li>
+              <li><strong>Dungeon game:</strong> juego con combate, magia y jefe final en HTML, CSS y JavaScript.</li>
+            </ul>
+          </article>
+
+          <!-- 2. Backend -->
+          <article class="skill-category-card">
+            <div class="category-header">
+              <span class="category-indicator" aria-hidden="true"></span>
+              <h3 class="category-title">Backend</h3>
+            </div>
+            <ul class="evidence-list">
+              <li><strong>Laravel y PHP:</strong> aplicaciones web en Rekom, LecturaXP y Casino educativo.</li>
+              <li>Gamificación con logros y experiencia en LecturaXP.</li>
+              <li>Backend y frontend independientes en Casino educativo.</li>
+              <li>Node.js, Java y Python; Python y TypeScript en las prácticas.</li>
+            </ul>
+          </article>
+
+          <!-- 3. Arquitectura y mensajería -->
+          <article class="skill-category-card skill-card-featured">
+            <div class="category-header">
+              <span class="category-indicator" aria-hidden="true"></span>
+              <h3 class="category-title">Arquitectura y mensajería</h3>
+            </div>
+            <ul class="evidence-list">
+              <li><strong>Arquitectura hexagonal:</strong> lógica de negocio separada de la infraestructura.</li>
+              <li><strong>RabbitMQ:</strong> mensajería asíncrona para integrar servicios.</li>
+              <li>Trabajo en equipo en proyectos internos de una editorial.</li>
+            </ul>
+          </article>
+
+          <!-- 4. APIs e integración -->
+          <article class="skill-category-card">
+            <div class="category-header">
+              <span class="category-indicator" aria-hidden="true"></span>
+              <h3 class="category-title">APIs e integración</h3>
+            </div>
+            <ul class="evidence-list">
+              <li>Consumo de APIs externas en Rekom y LecturaXP.</li>
+              <li>Trabajo y diseño con APIs REST.</li>
+            </ul>
+          </article>
+
+          <!-- 5. Herramientas y control de versiones -->
+          <article class="skill-category-card">
+            <div class="category-header">
+              <span class="category-indicator" aria-hidden="true"></span>
+              <h3 class="category-title">Herramientas y control de versiones</h3>
+            </div>
+            <ul class="evidence-list">
+              <li>Git y GitHub: control de versiones y proyectos publicados.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Habilidades interpersonales discretas -->
+        <div class="soft-skills-bar" aria-label="Competencias interpersonales">
+          <span class="soft-skill-label">Competencias clave:</span>
+          <span class="soft-skill-item">Aprendizaje rápido</span>
+          <span class="soft-skill-dot" aria-hidden="true">·</span>
+          <span class="soft-skill-item">Trabajo en equipo</span>
+          <span class="soft-skill-dot" aria-hidden="true">·</span>
+          <span class="soft-skill-item">Autonomía</span>
+          <span class="soft-skill-dot" aria-hidden="true">·</span>
+          <span class="soft-skill-item">Adaptabilidad</span>
+        </div>
+
+        <!-- DATOS TÉCNICOS PENDIENTES DE CONFIRMAR (NO INVENTAR):
+             Se dejan preparados los siguientes comentarios HTML para incorporar
+             exactamente cuando Luis los proporcione:
+             <!-- PENDIENTE: Base de datos usada (MySQL, PostgreSQL...) -->
+             <!-- PENDIENTE: Herramientas (VS Code, Composer, Docker, Postman, Figma...) -->
+             <!-- PENDIENTE: Sistemas y entornos (Linux, XAMPP...) -->
+             <!-- PENDIENTE: Metodologías (Scrum, pruebas, despliegue) -->
+        -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         5. PROYECTOS PERSONALES
+    ═══════════════════════════════════════ -->
+    <section id="proyectos" class="section projects-section" aria-labelledby="heading-proyectos">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="heading-proyectos" class="section-title">Proyectos personales</h2>
+          <p class="section-lead">
+            Cuatro proyectos propios desarrollados de principio a fin, combinando lógica de backend, consumo de APIs y desarrollo interactivo.
+          </p>
+        </div>
+
+        <!-- Filtros de proyectos con estado accesible aria-pressed -->
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos por tecnología">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" class="filter-btn" data-filter="laravel" aria-pressed="false">Laravel</button>
+          <button type="button" class="filter-btn" data-filter="javascript" aria-pressed="false">JavaScript</button>
+        </div>
+
+        <!-- Grid de Proyectos con inclinación 3D y brillo radial -->
+        <div class="projects-grid">
+          <!-- Proyecto 1: Rekom -->
+          <article class="project-card" data-t="laravel">
+            <div class="project-card-header">
+              <span class="project-tag">Laravel</span>
+              <h3 class="project-title">Rekom</h3>
+            </div>
+            <p class="project-description">
+              Plataforma de recomendación de videojuegos basada exclusivamente en la opinión de la comunidad.
+            </p>
+            <div class="project-tech-tags" aria-label="Tecnologías empleadas">
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">API externa</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/Luis-Barrientos/re-kom.eu" target="_blank" rel="noopener" class="project-link">
+                <span>Ver código en GitHub</span>
+                <svg class="external-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: LecturaXP -->
+          <article class="project-card" data-t="laravel">
+            <div class="project-card-header">
+              <div class="project-meta-top">
+                <span class="project-tag">Laravel</span>
+                <span class="status-badge">En desarrollo</span>
+              </div>
+              <h3 class="project-title">LecturaXP</h3>
+            </div>
+            <p class="project-description">
+              Web de seguimiento de lecturas y sesiones, con logros y sistema de experiencia (gamificación).
+            </p>
+            <div class="project-tech-tags" aria-label="Tecnologías empleadas">
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">API de libros</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/Luis-Barrientos/lecturaxp" target="_blank" rel="noopener" class="project-link">
+                <span>Ver código en GitHub</span>
+                <svg class="external-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Casino educativo -->
+          <article class="project-card" data-t="laravel">
+            <div class="project-card-header">
+              <div class="project-meta-top">
+                <span class="project-tag">Laravel</span>
+                <span class="status-badge">En desarrollo</span>
+              </div>
+              <h3 class="project-title">Casino educativo</h3>
+            </div>
+            <p class="project-description">
+              Aplicación para aprender las reglas de juegos de casino sin dinero real, con backend en Laravel y frontend independiente.
+            </p>
+            <div class="project-tech-tags" aria-label="Tecnologías empleadas">
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">PHP</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-status-note">Repositorio en preparación (privado)</span>
+              <!-- PENDIENTE: Añadir botón de enlace al repositorio de Casino educativo cuando la URL sea pública/confirmada:
+              <a href="URL_CONFIRMADA" target="_blank" rel="noopener" class="project-link">
+                <span>Ver código en GitHub</span>
+                <svg class="external-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              -->
+            </div>
+          </article>
+
+          <!-- Proyecto 4: Dungeon game -->
+          <article class="project-card" data-t="javascript">
+            <div class="project-card-header">
+              <span class="project-tag">JavaScript</span>
+              <h3 class="project-title">Dungeon game</h3>
+            </div>
+            <p class="project-description">
+              Juego de descenso por una mazmorra con combate, habilidades mágicas, pisos temáticos y jefe final.
+            </p>
+            <div class="project-tech-tags" aria-label="Tecnologías empleadas">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/Luis-Barrientos/Dungeon-Depths" target="_blank" rel="noopener" class="project-link">
+                <span>Ver código en GitHub</span>
+                <svg class="external-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         6. EXPERIENCIA Y FORMACIÓN
+    ═══════════════════════════════════════ -->
+    <section id="trayectoria" class="section timeline-section" aria-labelledby="heading-trayectoria">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="heading-trayectoria" class="section-title">Experiencia y formación</h2>
+          <p class="section-lead">
+            Prácticas profesionales en tecnología editorial y formación oficial especializada en desarrollo web y multiplataforma.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Bloque Experiencia Profesional -->
+          <div class="timeline-group">
+            <h3 class="timeline-group-title">Experiencia profesional</h3>
+            
+            <div class="timeline-item">
+              <div class="timeline-hex-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Marzo 2026 – Junio 2026 (3,5 meses)</div>
+                <h4 class="timeline-role">Prácticas en el Departamento de Tecnología</h4>
+                <div class="timeline-company">Innovación y Cualificación Editorial · Antequera</div>
+                <ul class="timeline-bullets">
+                  <li>Desarrollo de aplicaciones con arquitectura hexagonal, separando la lógica de negocio de la infraestructura.</li>
+                  <li>Integración de servicios mediante mensajería asíncrona con RabbitMQ.</li>
+                  <li>Participación en proyectos internos con Python y TypeScript, trabajando en equipo.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque Información Académica -->
+          <div class="timeline-group">
+            <h3 class="timeline-group-title">Información académica</h3>
+
+            <!-- 1. DAM -->
+            <div class="timeline-item">
+              <div class="timeline-hex-marker marker-amber" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2026 – 2027 (en curso)</div>
+                <h4 class="timeline-role">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+                <div class="timeline-company">DigiTech Málaga</div>
+              </div>
+            </div>
+
+            <!-- 2. DAW -->
+            <div class="timeline-item">
+              <div class="timeline-hex-marker marker-amber" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2025 – 2026</div>
+                <h4 class="timeline-role">CFGS Desarrollo de Aplicaciones Web (DAW)</h4>
+                <div class="timeline-company">ITEC Antequera</div>
+              </div>
+            </div>
+
+            <!-- 3. Bachillerato -->
+            <div class="timeline-item">
+              <div class="timeline-hex-marker marker-amber" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2025</div>
+                <h4 class="timeline-role">Bachillerato de Humanidades y Ciencias Sociales</h4>
+                <div class="timeline-company">IES Pedro Espinosa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque Idiomas -->
+          <div class="timeline-group">
+            <h3 class="timeline-group-title">Idiomas</h3>
+            <div class="language-card">
+              <div class="language-name">Inglés</div>
+              <p class="language-desc">Comprensión oral y lectora alta; escritura en desarrollo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         7. CONTACTO ("HABLEMOS")
+    ═══════════════════════════════════════ -->
+    <section id="contacto" class="section contact-section" aria-labelledby="heading-contacto">
+      <div class="container contact-container">
+        <div class="section-header">
+          <h2 id="heading-contacto" class="section-title">Hablemos</h2>
+          <p class="section-lead">
+            ¿Buscas un desarrollador junior enfocado en buenas prácticas de código, arquitectura desacoplada y con capacidad de aprendizaje inmediato? Puedes escribirme directamente o revisar mi código en GitHub.
+          </p>
+        </div>
+
+        <!-- Email con tipografía grande y memorable -->
+        <div class="contact-email-box">
+          <span class="email-subtext">Correo electrónico directo</span>
+          <a href="mailto:luink0900@gmail.com" class="huge-email" aria-label="Enviar correo a luink0900@gmail.com">
+            luink0900@gmail.com
+          </a>
+        </div>
+
+        <!-- Acciones directas -->
+        <div class="contact-actions">
+          <a href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener" class="btn btn-secondary contact-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub: @Luis-Barrientos</span>
+          </a>
+
+          <a href="CV_Luis_Barrientos_Perez.pdf" download="CV_Luis_Barrientos_Perez.pdf" class="btn btn-primary contact-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Descargar CV (PDF)</span>
+          </a>
+        </div>
+
+        <!-- Metadatos de contacto y disponibilidad -->
+        <div class="contact-details-bar">
+          <div class="detail-item">
+            <span class="detail-label">Localidad</span>
+            <span class="detail-val">Antequera (Málaga)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Disponibilidad</span>
+            <span class="detail-val">Presencial, remoto o híbrido</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Movilidad</span>
+            <span class="detail-val">Carné B y vehículo propio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       PIE DE PÁGINA (FOOTER)
+  ═══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <strong>Luis Barrientos Pérez</strong> · Antequera (Málaga)
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/Luis-Barrientos" target="_blank" rel="noopener" class="footer-link">
+          GitHub: @Luis-Barrientos
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante volver arriba -->
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Script interactivo vanilla JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
